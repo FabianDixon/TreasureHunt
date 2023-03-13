@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorSpawner : MonoBehaviour
+public class DoorSpawner_Legacy : MonoBehaviour
 {
     public GameObject[] doors;
     public GameObject[] doorFix;

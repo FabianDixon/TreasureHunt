@@ -33,8 +33,6 @@ public class Shooting : MonoBehaviour
 
     private bool readyToFire = true;
 
-    private RoomTemplates templates;
-
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
@@ -48,9 +46,6 @@ public class Shooting : MonoBehaviour
        
         fireRate = currentWeapon.GetComponent<Stats>()._FireRate + dynamics.fireRateModifier;
         currentWeapon.transform.parent = null;
-
-        templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-        templates.RemoveFromlistTreasure(currentWeapon.name);
 
         weaponSprite = currentWeapon.GetComponent<SpriteRenderer>();
 

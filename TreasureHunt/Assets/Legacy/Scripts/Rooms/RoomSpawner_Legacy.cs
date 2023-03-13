@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomSpawner : MonoBehaviour
+public class RoomSpawner_Legacy : MonoBehaviour
 {
 
     public int openingDirection;
@@ -25,7 +25,7 @@ public class RoomSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        doorFix = transform.parent.parent.gameObject.GetComponent<DoorSpawner>().doorFix;
+        doorFix = transform.parent.parent.gameObject.GetComponent<DoorSpawner_Legacy>().doorFix;
         switch (openingDirection)
         {
             case 1:
@@ -98,7 +98,7 @@ public class RoomSpawner : MonoBehaviour
         }
         else if (other.gameObject.tag == "RoomSpawnPoint")
         {
-            if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
+            if (other.GetComponent<RoomSpawner_Legacy>().spawned == false && spawned == false)
             {
                 //Poner algo en el medio de dos cuartos que dan a la nada
                 Instantiate(templates.secretRoom, transform.position, Quaternion.identity);
@@ -106,7 +106,7 @@ public class RoomSpawner : MonoBehaviour
                 {
                     GameObject newDoor1 = Instantiate(doorFix[0], transform.parent.Find("TopDoor").position, transform.parent.Find("TopDoor").rotation);
                     newDoor1.transform.parent = transform.parent;
-                    switch (other.GetComponent<RoomSpawner>().openingDirection)
+                    switch (other.GetComponent<RoomSpawner_Legacy>().openingDirection)
                     {
                         case 4:
                             if (other.transform.Find("LeftDoor") != null)
@@ -149,7 +149,7 @@ public class RoomSpawner : MonoBehaviour
                 {
                     GameObject newDoor1 = Instantiate(doorFix[1], transform.parent.Find("BottomDoor").position, transform.parent.Find("BottomDoor").rotation);
                     newDoor1.transform.parent = transform.parent;
-                    switch (other.GetComponent<RoomSpawner>().openingDirection)
+                    switch (other.GetComponent<RoomSpawner_Legacy>().openingDirection)
                     {
                         case 4:
                             if (other.transform.Find("LeftDoor") != null)
@@ -192,7 +192,7 @@ public class RoomSpawner : MonoBehaviour
                 {
                     GameObject newDoor1 = Instantiate(doorFix[2], transform.parent.Find("RightDoor").position, transform.parent.Find("RightDoor").rotation);
                     newDoor1.transform.parent = transform.parent;
-                    switch (other.GetComponent<RoomSpawner>().openingDirection)
+                    switch (other.GetComponent<RoomSpawner_Legacy>().openingDirection)
                     {
                         case 4:
                             if (other.transform.Find("LeftDoor") != null)
@@ -235,7 +235,7 @@ public class RoomSpawner : MonoBehaviour
                 {
                     GameObject newDoor1 = Instantiate(doorFix[3], transform.parent.Find("LeftDoor").position, transform.parent.Find("LeftDoor").rotation);
                     newDoor1.transform.parent = transform.parent;
-                    switch (other.GetComponent<RoomSpawner>().openingDirection)
+                    switch (other.GetComponent<RoomSpawner_Legacy>().openingDirection)
                     {
                         case 4:
                             if (other.transform.Find("LeftDoor") != null)
@@ -276,13 +276,13 @@ public class RoomSpawner : MonoBehaviour
                 }
                 spawned = true;
             }
-            else if (other.GetComponent<RoomSpawner>().spawned == true && spawned == false)
+            else if (other.GetComponent<RoomSpawner_Legacy>().spawned == true && spawned == false)
             {
                 otherSpawned = true;
             }
-            else if (other.GetComponent<RoomSpawner>().spawned == false && spawned == true)
+            else if (other.GetComponent<RoomSpawner_Legacy>().spawned == false && spawned == true)
             {
-                switch (other.GetComponent<RoomSpawner>().openingDirection)
+                switch (other.GetComponent<RoomSpawner_Legacy>().openingDirection)
                 {
                     case 4:
                         if (other.transform.Find("LeftDoor") != null)
@@ -319,7 +319,7 @@ public class RoomSpawner : MonoBehaviour
                     default:
                         break;
                 }
-                other.GetComponent<RoomSpawner>().spawned = true;
+                other.GetComponent<RoomSpawner_Legacy>().spawned = true;
             }
         }
     }

@@ -3,7 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - RoomSpawnPoint
+  - DoorSpawn0
+  - DoorSpawn1
+  - DoorSpawn2
+  - DoorSpawn3
+  - Hurt_Box
+  - UI
+  - Hearts
+  - forteUI
+  - pianoUI
+  - consumableUI
+  - Weapon_UI
+  - activeItemUI
+  - Door
+  - RoomOrigin
   layers:
   - Default
   - TransparentFX
@@ -38,6 +53,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: GridTileMap
+    uniqueID: 3626134059
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
